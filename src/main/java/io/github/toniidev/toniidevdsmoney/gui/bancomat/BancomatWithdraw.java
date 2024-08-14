@@ -36,7 +36,7 @@ public class BancomatWithdraw {
         inv.setItem(33, new CustomItem(Material.ARROW)
                 .rename("§lESCI", false));
 
-        InvHelper.disableClicks(inv);
+        InvHelper.disableClicksHandler(inv);
         InvHelper.addRedirect(29, new BancomatHome(creditCard).initialize(), inv);
         return inv;
     }

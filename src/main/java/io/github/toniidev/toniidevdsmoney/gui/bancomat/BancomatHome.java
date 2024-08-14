@@ -24,7 +24,7 @@ public class BancomatHome {
                 creditCard.getMoney() + "€"));
 
         InvHelper.fillWithGlass(inv);
-        InvHelper.disableClicks(inv);
+        InvHelper.disableClicksHandler(inv);
         InvHelper.addRedirect(4, new BancomatWithdraw(creditCard).initialize(), inv);
         return inv;
     }

@@ -32,7 +32,7 @@ public class CreditCardSetPWD {
         inv.setItem(8, new CustomItem(Material.GREEN_CONCRETE)
                 .rename("§lCONFERMA", false));
 
-        InvHelper.disableClicks(inv);
+        InvHelper.disableClicksHandler(inv);
         InvHelper.fillWithGlass(inv);
         return inv;
     }

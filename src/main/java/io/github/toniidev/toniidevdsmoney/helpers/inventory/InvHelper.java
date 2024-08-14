@@ -5,19 +5,17 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 
-import javax.print.attribute.HashPrintJobAttributeSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class InvHelper implements Listener {
-    private static List<Inventory> disabled = new ArrayList<>();
-    private static List<HashMap<Inventory, HashMap<Integer, Inventory>>> redirects = new ArrayList<>();
+    private static final List<Inventory> disabled = new ArrayList<>();
+    private static final List<HashMap<Inventory, HashMap<Integer, Inventory>>> redirects = new ArrayList<>();
 
     @EventHandler
-    public void disableClicks(InventoryClickEvent e){
+    public void disableClicksHandler(InventoryClickEvent e){
         if(disabled.contains(e.getClickedInventory())) e.setCancelled(true);
     }
 
@@ -38,7 +36,7 @@ public class InvHelper implements Listener {
         }
     }
 
-    public static void disableClicks(Inventory inventory){
+    public static void disableClicksHandler(Inventory inventory){
         disabled.add(inventory);
     }
 
