@@ -1,0 +1,4 @@
+name: toniidevdsmoney
+version: '${project.version}'
+main: io.github.toniidev.toniidevdsmoney.ToniiDevDSMoney
+api-version: '1.20'
