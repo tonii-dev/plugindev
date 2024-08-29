@@ -1,6 +1,6 @@
 package io.github.toniidev.toniidevdsmoney.gui.creditcard;
 
-import io.github.toniidev.toniidevdsmoney.classes.CustomItem;
+import io.github.toniidev.toniidevdsmoney.classes.CustomItemStack;
 import io.github.toniidev.toniidevdsmoney.helpers.inventory.InvHelper;
 import io.github.toniidev.toniidevdsmoney.items.CreditCard;
 import org.bukkit.Bukkit;
@@ -24,13 +24,13 @@ public class CreditCardSetPWD {
         String title = "Scegli una password";
 
         Inventory inv = Bukkit.createInventory(null, 9, title);
-        inv.setItem(4, new CustomItem(Material.BIRCH_SIGN)
+        inv.setItem(4, new CustomItemStack(Material.BIRCH_SIGN)
                 .rename("§oScegli una password", false)
-                .setLore("§l[PASSWORD SCELTA] " + (pwd.equals(" ") ? "--" : pwd)));
-        inv.setItem(7, new CustomItem(Material.RED_CONCRETE)
-                .rename("§lINDIETRO", false));
-        inv.setItem(8, new CustomItem(Material.GREEN_CONCRETE)
-                .rename("§lCONFERMA", false));
+                .setLore("§l[PASSWORD SCELTA] §r" + (pwd.equals(" ") ? "--" : pwd)));
+        inv.setItem(7, new CustomItemStack(Material.RED_CONCRETE)
+                .rename("§r§lINDIETRO", false));
+        inv.setItem(8, new CustomItemStack(Material.GREEN_CONCRETE)
+                .rename("§r§lCONFERMA", false));
 
         InvHelper.disableClicksHandler(inv);
         InvHelper.fillWithGlass(inv);

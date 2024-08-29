@@ -1,5 +1,6 @@
 package io.github.toniidev.toniidevdsmoney.gui.creditcard.logic;
 
+import io.github.toniidev.toniidevdsmoney.classes.CustomItemStack;
 import io.github.toniidev.toniidevdsmoney.gui.bancomat.BancomatHome;
 import io.github.toniidev.toniidevdsmoney.gui.creditcard.CreditCardSetPWD;
 import io.github.toniidev.toniidevdsmoney.helpers.ChatHelper;
@@ -15,10 +16,10 @@ public class OpenPWDSetter implements Listener {
         ItemStack itemInMainHand = e.getPlayer()
                 .getInventory().getItemInMainHand();
 
-        if(!(itemInMainHand instanceof CreditCard))
+        if(!CreditCard.check(itemInMainHand))
             return;
 
-        CreditCard card = (CreditCard) itemInMainHand;
+        CreditCard card = CreditCard.parse(itemInMainHand);
 
         if(card.getStatus()){
             ChatHelper.sendMessage("CARTA DI CREDITO",

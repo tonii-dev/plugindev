@@ -1,11 +1,12 @@
 package io.github.toniidev.toniidevdsmoney.items;
 
-import io.github.toniidev.toniidevdsmoney.classes.CustomItem;
+import io.github.toniidev.toniidevdsmoney.classes.CustomItemStack;
 
-public class Money extends CustomItem {
+public class Money extends CustomItemStack {
     private double value;
 
-    public Money(double amount, CustomItem item) {
+    public Money(double amount, CustomItemStack item) {
+        super(item.getType());
         this.value = amount;
     }
 

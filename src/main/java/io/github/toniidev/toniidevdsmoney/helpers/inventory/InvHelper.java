@@ -58,7 +58,7 @@ public class InvHelper implements Listener {
 
     public static void refreshCreditCardSlot(Inventory inv){
         for(int i = 0; i < inv.getSize(); i++){
-            if(inv.getItem(i) instanceof CreditCard) {
+            if(CreditCard.check(inv.getItem(i))) {
                 CreditCard creditCard = (CreditCard) inv.getItem(i);
                 inv.setItem(i, creditCard.addLore("§l[SALDO]§r " +
                         creditCard.getMoney() + "€"));

@@ -22,7 +22,7 @@ public class OpenBancomat implements Listener {
                 .findFirst()
                 .orElse(null) == null) return;
 
-        if(!(itemInMainHand instanceof CreditCard)){
+        if(!(CreditCard.check(itemInMainHand))){
             ChatHelper.sendMessage("bancomat",
                     "Per accedere al bancomat, devi avere una carta" +
                             "di credito in mano", e.getPlayer());

@@ -9,10 +9,17 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class AskForPWD implements MessageHandler, Listener {
     String inventoryTitle = "Scegli una password";
     CreditCard card = new CreditCard();
+    Plugin plugin;
+
+    public AskForPWD(Plugin plugin){
+        this.plugin = plugin;
+    }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
@@ -20,7 +27,7 @@ public class AskForPWD implements MessageHandler, Listener {
         if(e.getRawSlot() != 4) return;
 
         Player p = (Player) e.getWhoClicked();
-        card = (CreditCard) p.getInventory().getItemInMainHand();
+        card = CreditCard.parse(p.getInventory().getItemInMainHand());
 
         p.closeInventory();
         ChatHelper.sendMessage("CARTA DI CREDITO",
@@ -30,6 +37,11 @@ public class AskForPWD implements MessageHandler, Listener {
 
     @Override
     public void pinHandler(String message, Player sender) {
-        sender.openInventory(new CreditCardSetPWD(card, message).initialize());
+        new BukkitRunnable(){
+            @Override
+            public void run(){
+                sender.openInventory(new CreditCardSetPWD(card, message).initialize());
+            }
+        }.runTask(plugin);
     }
 }

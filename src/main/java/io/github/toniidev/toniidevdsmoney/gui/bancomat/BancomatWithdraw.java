@@ -1,6 +1,6 @@
 package io.github.toniidev.toniidevdsmoney.gui.bancomat;
 
-import io.github.toniidev.toniidevdsmoney.classes.CustomItem;
+import io.github.toniidev.toniidevdsmoney.classes.CustomItemStack;
 import io.github.toniidev.toniidevdsmoney.helpers.inventory.InvHelper;
 import io.github.toniidev.toniidevdsmoney.items.CreditCard;
 import io.github.toniidev.toniidevdsmoney.items.premade.MoneyInstances;
@@ -29,11 +29,11 @@ public class BancomatWithdraw {
         inv.setItem(16, MoneyInstances.ONE_HUNDRED_EUROS);
         inv.setItem(17, MoneyInstances.FIVE_HUNDRED_EUROS);
 
-        inv.setItem(29, new CustomItem(Material.STICK)
+        inv.setItem(29, new CustomItemStack(Material.STICK)
                 .rename("§lINDIETRO", false));
         inv.setItem(31, creditCard.addLore("§l[SALDO]§r " +
                 creditCard.getMoney() + "€"));
-        inv.setItem(33, new CustomItem(Material.ARROW)
+        inv.setItem(33, new CustomItemStack(Material.ARROW)
                 .rename("§lESCI", false));
 
         InvHelper.disableClicksHandler(inv);

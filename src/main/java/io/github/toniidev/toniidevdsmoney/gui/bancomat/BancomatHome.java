@@ -1,6 +1,6 @@
 package io.github.toniidev.toniidevdsmoney.gui.bancomat;
 
-import io.github.toniidev.toniidevdsmoney.classes.CustomItem;
+import io.github.toniidev.toniidevdsmoney.classes.CustomItemStack;
 import io.github.toniidev.toniidevdsmoney.helpers.inventory.InvHelper;
 import io.github.toniidev.toniidevdsmoney.items.CreditCard;
 import org.bukkit.Bukkit;
@@ -18,7 +18,7 @@ public class BancomatHome {
         String title = "§o/bancomat/home";
 
         Inventory inv = Bukkit.createInventory(null, 9, title);
-        inv.setItem(4, new CustomItem(Material.GREEN_CONCRETE)
+        inv.setItem(4, new CustomItemStack(Material.GREEN_CONCRETE)
                 .rename("§lPRELEVA", false));
         inv.setItem(8, creditCard.addLore("§l[SALDO]§r " +
                 creditCard.getMoney() + "€"));

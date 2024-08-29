@@ -1,7 +1,7 @@
 package io.github.toniidev.toniidevdsmoney.blocks;
 
 import io.github.toniidev.toniidevdsmoney.classes.CustomBlock;
-import io.github.toniidev.toniidevdsmoney.classes.CustomItem;
+import io.github.toniidev.toniidevdsmoney.classes.CustomItemStack;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,7 +27,7 @@ public class Bancomat implements Listener {
         return bancomats;
     }
 
-    private static CustomItem linkedItem = new CustomItem(Material.CHISELED_QUARTZ_BLOCK)
+    private static CustomItemStack linkedItem = new CustomItemStack(Material.CHISELED_QUARTZ_BLOCK)
             .rename("Bancomat", true)
             .setSpecialEnchanted(true);
 

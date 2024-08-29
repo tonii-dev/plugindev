@@ -6,10 +6,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChatListener implements Listener {
-    private static List<Player> playersChoosingPWD;
+    private static List<Player> playersChoosingPWD = new ArrayList<>();
 
     public static List<Player> getPlayersChoosingPWD() {
         return playersChoosingPWD;
