@@ -84,7 +84,7 @@ public class CustomItemStack extends ItemStack {
     public CustomItemStack setLore(String... lore){
         List<String> actualLore = new ArrayList<>();
         for(String line : lore){
-            actualLore.add("§r§f" + line);
+            actualLore.add("§r§f" + line.replace("§r", "§r§f"));
         }
 
         ItemMeta meta = this.getItemMeta();
@@ -96,7 +96,7 @@ public class CustomItemStack extends ItemStack {
     public CustomItemStack setLore(List<String> lore){
         List<String> actualLore = new ArrayList<>();
         for(String line : lore){
-            actualLore.add("§r§f" + line);
+            actualLore.add("§r§f" + line.replace("§r", "§r§f"));
         }
 
         ItemMeta meta = this.getItemMeta();
@@ -110,7 +110,7 @@ public class CustomItemStack extends ItemStack {
         List<String> actualLore = meta.getLore() == null ?
                 new ArrayList<>() : meta.getLore();
         for(String line : lore){
-            actualLore.add("§r§f" + line);
+            actualLore.add("§r§f" + line.replace("§r", "§r§f"));
         }
 
         meta.setLore(actualLore);

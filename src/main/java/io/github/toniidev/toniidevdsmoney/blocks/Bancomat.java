@@ -38,7 +38,10 @@ public class Bancomat implements Listener {
     @EventHandler
     public void handlePlacing(BlockPlaceEvent e){
         if(!e.getPlayer().getInventory().getItemInMainHand().isSimilar(linkedItem)) return;
-        addBancomat(new CustomBlock(e.getBlockPlaced(), "Bancomat"));
+
+        CustomBlock bnc = new CustomBlock(e.getBlockPlaced(), "Bancomat");
+        bnc.initialize();
+        addBancomat(bnc);
     }
 
     @EventHandler

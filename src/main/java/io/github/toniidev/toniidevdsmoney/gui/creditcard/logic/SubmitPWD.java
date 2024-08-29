@@ -26,8 +26,10 @@ public class SubmitPWD implements Listener {
         card = CreditCard.parse(p.getInventory().getItemInMainHand());
 
         CustomItemStack sign = CustomItemStack.parse(e.getClickedInventory().getItem(4));
-        card.activate(sign.getLore().get(0)
-                .replace("§f§l[PASSWORD SCELTA] ", ""));
+        e.getWhoClicked().getInventory()
+                .setItem(e.getWhoClicked().getInventory().getHeldItemSlot(),
+                        card.activate(sign.getLore().get(0)
+                                .replace("§f§l[PASSWORD SCELTA] ", "")));
 
         p.closeInventory();
         ChatHelper.sendMessage("CARTA DI CREDITO",

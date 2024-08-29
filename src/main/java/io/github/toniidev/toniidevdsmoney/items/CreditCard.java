@@ -22,8 +22,8 @@ public class CreditCard extends CustomItemStack {
     }
 
     public static CreditCard parse(CustomItemStack stack){
-        String number = stack.getLore().get(0).replace("§l[CODICE] §r§o", "");
-        boolean active = stack.getLore().get(1).replace("§l[STATO CARTA] §r§o", "")
+        String number = stack.getLore().get(0).replace("§l[CODICE] §r§f§o", "");
+        boolean active = stack.getLore().get(1).replace("§l[STATO CARTA] §r§f§o", "")
                 .equals("Attivata");
 
         CreditCard cc = CreditCard.ccs.stream()
@@ -35,8 +35,8 @@ public class CreditCard extends CustomItemStack {
     }
 
     public static CreditCard parse(ItemStack stack){
-        String number = stack.getItemMeta().getLore().get(0).replace("§f§l[CODICE] §r§o", "");
-        boolean active = stack.getItemMeta().getLore().get(1).replace("§f§l[STATO CARTA] §r§o", "")
+        String number = stack.getItemMeta().getLore().get(0).replace("§f§l[CODICE] §f§o", "");
+        boolean active = stack.getItemMeta().getLore().get(1).replace("§f§l[STATO CARTA] §f§o", "")
                 .equals("Attivata");
 
         System.out.println(number);
@@ -119,11 +119,12 @@ public class CreditCard extends CustomItemStack {
         money -= amount;
     }
 
-    public void activate(String password){
+    public CreditCard activate(String password){
         this.password = password;
         this.setLore(this.
                 replaceLoreLine(1, this.getLore().get(1).replace("Disattivata", "Attivata")));
         this.active = true;
+        return this;
     }
 
     public void disable(){

@@ -30,11 +30,11 @@ public class OpenBancomat implements Listener {
             return;
         }
 
-        CreditCard card = (CreditCard) itemInMainHand;
+        CreditCard card = CreditCard.parse(itemInMainHand);
 
         if(!card.getStatus()){
             ChatHelper.sendMessage("bancomat",
-                    "La carta di credito che stai utilizzando" +
+                    "La carta di credito che stai utilizzando " +
                             "non è attiva", e.getPlayer());
 
             return;

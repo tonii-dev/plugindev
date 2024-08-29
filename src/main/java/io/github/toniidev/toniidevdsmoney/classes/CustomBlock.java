@@ -23,7 +23,7 @@ public class CustomBlock implements Cloneable {
 
     public void initialize(){
         Location loc = block.getLocation()
-                .add(0.5, 1.5, 0.5);
+                .add(0.5, -1, 0.5);
 
         ArmorStand stand = block.getWorld()
                 .spawn(loc, ArmorStand.class);
