@@ -7,6 +7,7 @@ import io.github.toniidev.toniidevdsmoney.gui.creditcard.logic.AskForPWD;
 import io.github.toniidev.toniidevdsmoney.gui.creditcard.logic.ClosePWD;
 import io.github.toniidev.toniidevdsmoney.gui.creditcard.logic.OpenPWDSetter;
 import io.github.toniidev.toniidevdsmoney.gui.creditcard.logic.SubmitPWD;
+import io.github.toniidev.toniidevdsmoney.helpers.EventsLoaderHelper;
 import io.github.toniidev.toniidevdsmoney.helpers.inventory.InvHelper;
 import io.github.toniidev.toniidevdsmoney.items.CreditCard;
 import io.github.toniidev.toniidevdsmoney.listeners.ChatListener;
@@ -20,7 +21,8 @@ public final class ToniiDevDSMoney extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
 
-        Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
+        // TODO: put these things in a separate thing
+        /*Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
         Bukkit.getPluginManager().registerEvents(new ChatListener(new AskForPWD(this)), this);
         Bukkit.getPluginManager().registerEvents(new InvHelper(), this);
         Bukkit.getPluginManager().registerEvents(new OpenBancomat(), this);
@@ -29,7 +31,9 @@ public final class ToniiDevDSMoney extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ClosePWD(), this);
         Bukkit.getPluginManager().registerEvents(new OpenPWDSetter(), this);
         Bukkit.getPluginManager().registerEvents(new SubmitPWD(), this);
-        Bukkit.getPluginManager().registerEvents(new Bancomat(), this);
+        Bukkit.getPluginManager().registerEvents(new Bancomat(), this);*/
+
+        new EventsLoaderHelper(this).load();
     }
 
     @Override
